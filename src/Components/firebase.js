@@ -2,6 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // Ensure the environment variables are loaded correctly
 const firebaseConfig = {
@@ -20,5 +22,7 @@ console.log('Firebase Config:', firebaseConfig); // Debugging line
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
+const auth = getAuth(app);
+const db = getFirestore(app)
 
-export { app, analytics, database };
+export { app, analytics, database, auth, db  };
