@@ -62,8 +62,8 @@ function Write() {
 
     return (
         <>
-        <div className='absolute right-10 top-5'>
-            <button onClick={()=>{navigate('/login')}} className='text-blue-500 bg-transparent p-2 rounded font-semibold hover:bg-blue-600 hover:text-white border-blue-500 border active:bg-blue-950 h-10 flex justify-center items-center transition-colors'>Log out</button>
+        <div className='absolute right-3 sm:right-10 top-5 tracking-wider'>
+            <button onClick={()=>{navigate('/login')}} className='text-blue-500 text-sm bg-transparent p-2 rounded font-semibold hover:bg-blue-600 hover:text-white border-blue-500 border active:bg-blue-950 h-10 flex justify-center items-center transition-colors'>Log out</button>
         </div>
 
         <div className='flex flex-col justify-center items-center min-h-screen bg-gray-700 tracking-wider px-3'>

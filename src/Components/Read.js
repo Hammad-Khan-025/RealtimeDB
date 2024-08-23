@@ -83,9 +83,9 @@ function Read() {
                     <td className="w-[60%] border border-black p-2 text-start">
                       Description
                     </td>
-                    <td className="w-[15%] sm:w-[10%] border border-black p-2 text-start">
+                    {/* <td className="w-[15%] sm:w-[10%] border border-black p-2 text-start">
                       Edit
-                    </td>
+                    </td> */}
                   </tr>
                 </thead>
                 <tbody className="text-black">
@@ -97,11 +97,11 @@ function Read() {
                       <td className="w-[60%] border border-black p-2 break-words align-top">
                         {item.userDescription}
                       </td>
-                      <td className="w-[15%] sm:w-[10%] border border-black p-2">
+                      {/* <td className="w-[15%] sm:w-[10%] border border-black p-2">
                         <div className="flex justify-center">
                           <FaEdit className="cursor-pointer" />
                         </div>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>

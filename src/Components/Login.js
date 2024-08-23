@@ -3,16 +3,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { BiLoaderAlt } from "react-icons/bi";
-// import UserContext from './UserContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [customAlert, setCustomAlert] = useState(false);
-  const [loading, setLoading] = useState(false);  // New loading state
+  const [loading, setLoading] = useState(false);  
   const navigate = useNavigate();
-
-//   const { setUser } = useContext(UserContext);
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -21,24 +20,23 @@ const Login = () => {
       return;
     }
 
-    setLoading(true);  // Set loading to true when starting login
+    setLoading(true);  
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
       console.log(user);
 
-      // If you have a UserContext, you can set the user data here
-      // setUser({ email: user.email, uid: user.uid });
-
-      // Redirect the user to the Write page
-      navigate("/write");  // Replace with your desired route
+      navigate("/write");  
 
     } catch (error) {
       console.log("Login failed", error.message);
+      toast.error("Invalid email or password", {
+        position: "top-center"
+      });
       setCustomAlert(true);
     } finally {
-      setLoading(false);  // Set loading to false after login attempt
+      setLoading(false); 
     }
   };
 
@@ -84,6 +82,7 @@ const Login = () => {
           </h1>
         </div>
       </main>
+      <ToastContainer />
     </div>
   );
 };
